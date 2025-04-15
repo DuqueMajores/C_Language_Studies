@@ -57,9 +57,13 @@ int main(){
     npcs[1].insert("Kassandra", "Bardo", "WindHelm", 100, 15, 10);
     npcs[2].insert("Dova", "Elfo", "WindHelm", 100, 25, 15);
     npcs[3].insert("Camila", "Aldean", "WindHelm", 100, 10, 5);
-    npcs[4].insert("Domenic", "Aldean", "WindHelm", 100, 12, 8);
+
 
     for(int i=0; i<5; i++){
+        if(npcs[i].nome == ""){
+            cout << " FIM" << endl;
+            break;
+        }
         npcs[i].status();
     }
 
