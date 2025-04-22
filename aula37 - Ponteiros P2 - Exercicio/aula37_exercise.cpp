@@ -1,21 +1,73 @@
-Exercício: Gerenciamento de Alunos com Ponteiros
-Crie um programa em C++ que gerencie informações de alunos usando ponteiros. O programa deve:
+#include <iostream>
+using namespace std;
 
-Criar uma struct chamada Aluno com os seguintes campos:
+void dot();
+void menu();
+void switcase();
 
-nome (string): o nome do aluno.
-idade (int): a idade do aluno.
-nota (float): a nota final do aluno.
-Alocar dinamicamente memória para armazenar informações de um número variável de alunos (definido pelo usuário).
+int opt = 0;
+bool loop = true;
+string name = "";
+float note = 0.0;
+int age = 0;
 
-Permitir que o usuário:
+struct Aluno{
+    string nome;
+    int idade;
+    float nota;
+    int size;
 
-Insira os dados de cada aluno.
-Liste todos os alunos cadastrados.
-Calcule e exiba a média das notas dos alunos.
-Libere a memória alocada dinamicamente ao final do programa.
-Utilize ponteiros para acessar e manipular os dados dos alunos.
+    void adicionarAlunos(string *stnome, int *stidade, float *stnota){
+        nome = *stnome;
+        idade = *stidade;
+        nota = *stnota;
+        size += 1;
+    }
+    void listarAlunos(){
+        for(int i=0; i<size; i++){
+            dot();
+            cout << nome[i] << endl;
+            cout << idade << endl;
+            cout << nota << endl;
+        }
+    }
+    void calcularMedia(){
+        
+    }
+};
 
-Dicas:
-Use new e delete para alocação e liberação de memória.
-Organize o código em funções como adicionarAlunos, listarAlunos, e calcularMedia.
+int main(){
+    while(loop){
+        dot();
+        menu();
+        switcase();
+    }
+
+    cin.get();
+    delete alunos;
+    return 0;
+}
+
+void dot(){
+    cout << "-------------------------";
+}
+void menu(){
+    cout << " 1. Adcionar Aluno\n 2. Listar Alunos\n 3. Medias das Notas\n Opcao: ";
+    cin >> opt;
+}
+void switcase(){
+    switch(opt){
+        case 1:
+            dot();
+            cout << " Nome: ";
+            cin >> name;
+            cout << " Idade: ";
+            cin >> age;
+            cout << " Nota: ";
+            cin >> note;
+
+            adicionarAlunos(&name, &age , &note);
+        case 2:
+            listarAlunos();
+    }
+}
