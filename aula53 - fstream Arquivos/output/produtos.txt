@@ -1,0 +1,2 @@
+ Nome: Camisa Azul | Preco: 59 | Quantidade: 200
+ Nome: Casaco Amarelo | Preco: 120 | Quantidade: 50
